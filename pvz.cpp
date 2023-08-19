@@ -7,8 +7,8 @@ LinkList<Zombie> zombie_link;
 int plantsNum = 0;
 int zombieNum = 0;
 int plants_state[5][8];
-int cur_x, cur_y;			// 当前光标位置
-int cur_plants = -1;				// 光标当前植物
+int cur_x, cur_y;					// current cursor position
+int cur_plants = -1;				// cursor current plant
 int pointer_row = 0;
 
 IMAGE background;
@@ -1251,7 +1251,7 @@ void GameEngine()
 			}
 			else zombie_link.DeleteNode(zombieptr->No);
 		}
-		if (zombieptr->type == CATAPULT) {				// 单独处理投石车
+		if (zombieptr->type == CATAPULT) {				// Dealing with Catapults Separately
 			if (zombieptr->isFrozen) {
 				--zombieptr->isFrozen;
 				goto CATAPULT_END;
@@ -1268,8 +1268,8 @@ void GameEngine()
 						}
 						/*
 						else {
-							plantsptr->eaten = 0;		// 投石车太强了
-							plantsptr->hurt = 0;		// 开启削弱，同下
+							plantsptr->eaten = 0;		// Catapult is too strong
+							plantsptr->hurt = 0;		// Turn on weakening, same as below
 						}
 						*/
 						curP = curP->next;
@@ -1285,7 +1285,7 @@ void GameEngine()
 						/*
 						else {
 							plantsptr->eaten = 0;
-							plantsptr->hurt = 0;		// 开启削弱
+							plantsptr->hurt = 0;		// Turn on weakening
 						}
 						*/
 						curP = curP->next;
@@ -1318,7 +1318,7 @@ void GameEngine()
 							plantsptr->hurt++;
 						}
 						else {
-							plantsptr->eaten = 0;				// 无敌花盆bug
+							plantsptr->eaten = 0;				// invincible flowerpot bug
 							plantsptr->hurt = 0;
 						}
 					}

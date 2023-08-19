@@ -34,8 +34,8 @@ using namespace std;
 extern int plantsNum;
 extern int zombieNum;
 extern int plants_state[5][8];
-extern int cur_x, cur_y;			// 当前光标位置
-extern int cur_plants;				// 光标当前植物
+extern int cur_x, cur_y;			// current cursor position
+extern int cur_plants;				// cursor current plant
 extern int pointer_row;
 
 extern IMAGE background;
@@ -94,9 +94,9 @@ public:
 		}
 	}
 private:
-	coordinate card_pos[10];			// 跟踪坐标
-	int convey_length = 0;				// 当前卡片数目
-	int card_type[16];					// 指定坐标的植物类型
+	coordinate card_pos[10];			// tracking coordinates
+	int convey_length = 0;				// current number of cards
+	int card_type[16];					// the plant type at the specified coordinates
 };
 
 extern Conveycard convey_card;
@@ -175,7 +175,7 @@ class Zombie {
 public:
 	int type;
 	int hp;
-	int state;				//walk:0 eat:1 bomb:2
+	int state;				// walk:0 eat:1 bomb:2
 	int speed;
 	int No;
 	int row;
@@ -186,7 +186,7 @@ public:
 	int FrameBomb;
 	int isFrozen;
 	int xspan;
-	int ishit;				//被攻击
+	int ishit;				// be attacked
 	int hurt;
 	void jokerBomb(int frame);
 	Zombie() {
