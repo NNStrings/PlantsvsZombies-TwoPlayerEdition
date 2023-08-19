@@ -58,7 +58,7 @@ HP: 1200<br>
 **6. Clown Zombie**<br>
 Place key: n/N<br>
 HP: 400<br>
-Attack: 1<br>
+Attack: $\infty$<br>
 Speed: 1<br>
 **Explodes after death, destroying the three plants that are close to (to the extent that they can be eaten) in front of the clown**<br>
 ## QA
