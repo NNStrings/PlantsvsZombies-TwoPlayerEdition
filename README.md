@@ -1,72 +1,55 @@
-# PlantsvsZombies_TwoPlayerEdition
-## Introduce
-This program is based on the C++ two-player game developed by EasyX Graphics Library. The game is written in the style of Dr. Zombie's Revenge in the original Plants vs. Zombies, but there are still many unrealized functions. Users can control the placement of plants with the mouse or the keyboard Zombie placement
-## Instructions for use
-### Plants
-The operation of plants is consistent with the original version. The placement of plants is controlled by the left button of the mouse. The difference from the original version is that there is no ghost hint when placing them, and they may be placed in the wrong place when placing them.
-Type of plant:<br>
-**1. Cabbage**<br>
-HP: 6<br>
-Attack: 40<br>
-**Attack speed is twice the original version**<br>
-**2. Watermelon**<br>
-HP: 6<br>
-Attack: 80<br>
-**Attack speed is twice the original version**<br>
-**3. Corn**<br>
-HP: $\infty$<br>
-Attack: 1800<br>
-**Ash plants, only placed in pots**<br>
-**4. Ice Mushroom**<br>
-HP: $\infty$<br>
-**Attack: 100**<br>
-ashes plant<br>
-**5. Chilli**<br>
-HP: $\infty$<br>
-Attack: 1800<br>
-ashes plant<br>
-**6. Flower Pot**<br>
-HP: 6<br>
-### Zombies<br>
-Zombies are placed through the keyboard, and the up, down, left, and right keys can control which row the zombies should be placed in<br>
-**1. Normal Zombie**<br>
-Place key: z/Z<br>
-HP: 200<br>
-Attack: 1<br>
-Speed: 1<br>
-**2. Barricade Zombie**<br>
-Place key: x/X<br>
-HP: 400<br>
-Attack: 1<br>
-Speed: 1<br>
-**3. Bucket Zombie**<br>
-Place key: c/C<br>
-HP: 1000<br>
-Attack: 1<br>
-Speed: 1<br>
-**4. Football Zombie**<br>
-Place key: v/V<br>
-HP: 1800<br>
-Attack: 1<br>
-**Speed: 2**<br>
-**5. Catapult Zombie**<br>
-Place key: b/B<br>
-HP: 1200<br>
-**Attack: 2**<br>
-**Speed: 0**<br>
-**It will only attack the plants in your last row, it will not move forward, nor will it crush the plants**<br>
-**6. Clown Zombie**<br>
-Place key: n/N<br>
-HP: 400<br>
-Attack: $\infty$<br>
-Speed: 1<br>
-**Explodes after death, destroying the three plants that are close to (to the extent that they can be eaten) in front of the clown**<br>
-## QA
-Q: Why drag a plant to an illegal position (such as the sky, the moon, behind the last row) and click to disappear?<br>
-A: Because the program does not do a withdrawal operation when processing cards, that is, as long as the card is taken out, it must be planted, otherwise you can click anywhere outside the planting area to destroy the plant (also to avoid a crash in an extreme situation: planting on the flowerpot Plants, but the plants in your hands cannot be planted, put back, or destroyed)<br>
-Q: Why can't I place plants in the ninth row?<br>
-A: The ninth row is for zombies, plants are not allowed<br>
-Q: Why sometimes the corn cannon can't hit the catapult zombie?<br>
-A: The mystery judgment of Catapult Zombie can only be exploded by placing flower pots in the front row (the 8th row from back to front).<br>
-## Acknowledgments
-**Thanks to [Ooil9965](https://github.com/Ooil9965) for the material! ! !**
+# 植物大战僵尸双人版
+
+## 介绍
+
+本程序是基于 EasyX Graphics Library 开发的 C++ 双人游戏，游戏沿用了原版植物大战僵尸中僵尸博士复仇的风格，但还有很多未实现的功能，用户可以通过鼠标或键盘控制植物的摆放，僵尸的摆放。
+
+## 游戏说明
+
+### 植物
+
+植物的操作和原版一致，通过鼠标左键控制植物的摆放，和原版的区别是摆放时没有幽灵提示（ghost hint），摆放时可能会放错位置。
+
+**植物类型：**
+
+| 属性 | 卷心菜 | 西瓜 | 玉米 | 寒冰菇 | 辣椒 | 花盆 |
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+| 血量 | 6 | 6 | $\infty$ | $\infty$ | $\infty$ | 6 |
+| 攻击 | 40 | 80 | 1800 | 100 | 1800 | 0 |
+| 特殊说明 | 无 | 无 | 灰烬植物，改为一颗玉米加农炮炮弹，但只能放置在花盆上 | 无 | 无 | 无 |
+
+### 僵尸
+
+僵尸通过键盘放置，上下键可以控制僵尸应该放在哪一行。
+
+**僵尸类型：**
+
+| 属性 | 普通僵尸 | 路障僵尸 | 铁通僵尸 | 橄榄球僵尸 | 投石车僵尸 | 小丑僵尸 |
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+| 放置键 | z/Z | x/X | c/C | v/V | b/B | n/N |
+| 血量 | 200 | 400 | 1000 | 1800 | 1200 | 400 |
+| 攻击 | 1 | 1 | 1 | 1 | 2 | $\infty$ |
+| 行走速度 | 1 | 1 | 1 | 2 | 0 | 1 |
+| 特殊说明 | 无 | 无 | 无 | 无 | 只会攻击你最后一排的植物，它不会向前移动，也不会压碎植物 | 死亡后爆炸，摧毁小丑面前的三株靠近的植物 |
+
+## 可能存在的问题
+
+Q：为什么把植物拖到非法位置（比如天空，月亮，最后一排后面）点击就消失了？
+
+A：因为程序在处理卡牌的时候没有做撤消操作，也就是只要把卡牌拿出来就只能​种上，所以可以点击种植区外的任意位置来破坏植物，这也避免一种极端情况：花盆上种满植物，但是手里的植物却不能种，放回去或者破坏）。
+
+Q：为什么第九排放不了植物？
+
+A：第九排是放僵尸的，不允许放置植物。
+
+Q：为什么有时候玉米加农炮打不到投石车僵尸？
+
+A：投石车僵尸体型过大，但判定和其他僵尸是一样的，判定在僵尸的后半身。
+
+## 致谢
+
+**感谢 [Ooil9965](https://github.com/Ooil9965) 提供的素材! ! !**
+
+## 更新
+
+本次更新修改了程序的结构，从 visual studio sln 模式改成了 cmake 模式，增加了一些模块化的处理，将渲染函数和游戏处理函数进行了异步化，提高游戏的流畅性（好像本来也不卡）。
