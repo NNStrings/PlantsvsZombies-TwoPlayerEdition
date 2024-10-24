@@ -16,8 +16,6 @@
 #include<array>
 #include<random>
 
-#include "music.hpp"
-
 using namespace std;
 
 #define FLOWERPOT 0
